@@ -60,7 +60,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
 .add-cat-btn{height:44px;padding:0 16px;background:rgba(0,229,160,.1);border:1.5px solid var(--accent);border-radius:12px;color:var(--accent);font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer}
 .ob-footer{position:fixed;bottom:0;left:0;right:0;padding:16px 24px 36px;background:linear-gradient(to top,var(--bg) 60%,transparent)}
 .ob-btn{width:100%;height:56px;background:var(--accent);color:#0a0a0f;border:none;border-radius:16px;font-family:var(--sans);font-size:16px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:transform .12s}
-.bottom-nav{position:fixed;bottom:0;left:0;right:0;height:64px;background:var(--surface);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-around;z-index:50}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;height:64px;background:var(--surface);border-top:1px solid rgba(0,229,160,.2);display:flex;align-items:center;justify-content:space-around;z-index:50}
 .nav-item{display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;padding:8px 20px;border:none;background:none;color:var(--muted);font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.05em;transition:color .2s}
 .nav-item.active{color:var(--accent)}
 .nav-icon{font-size:20px;line-height:1}
@@ -87,10 +87,13 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
 .ing-val{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--text)}
 .ing-input{font-family:var(--mono);font-size:13px;font-weight:500;background:rgba(0,229,160,.08);border:1px solid var(--accent);border-radius:8px;color:var(--text);padding:4px 8px;width:130px;text-align:right;outline:none}
 .section-title{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-weight:500;padding:0 24px;margin-bottom:10px;position:relative;z-index:1}
+.section-header{display:flex;justify-content:space-between;align-items:center;padding:0 24px;margin-bottom:10px;position:relative;z-index:1}
+.section-header .section-title{padding:0;margin-bottom:0}
+.section-add-btn{font-size:12px;color:var(--accent);font-weight:500;cursor:pointer;background:rgba(0,229,160,.08);border:1px solid rgba(0,229,160,.3);border-radius:8px;font-family:var(--sans);padding:5px 10px}
 .budget-list{padding:0 20px;display:flex;flex-direction:column;gap:8px;margin-bottom:20px;position:relative;z-index:1}
 .budget-item{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:12px 14px}
 .budget-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-.budget-name{font-size:13px;font-weight:500}
+.budget-name{font-size:13px;font-weight:500;display:flex;align-items:center;gap:6px}
 .budget-nums{font-family:var(--mono);font-size:11px;color:var(--muted)}
 .budget-restante{font-size:11px;margin-top:6px;font-family:var(--mono)}
 .bar-track{height:5px;background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden}
@@ -98,7 +101,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
 .bar-ok{background:var(--accent)}.bar-warn{background:var(--warn)}.bar-over{background:var(--danger)}
 .nolimit-list{padding:0 20px;display:flex;flex-direction:column;gap:8px;margin-bottom:20px;position:relative;z-index:1}
 .nolimit-item{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
-.nolimit-name{font-size:13px;font-weight:500;color:var(--muted)}
+.nolimit-name{font-size:13px;font-weight:500;color:var(--muted);display:flex;align-items:center;gap:6px}
 .nolimit-val{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--accent2)}
 .resumen-card{margin:0 20px 32px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;position:relative;z-index:1;overflow:hidden}
 .resumen-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent2),var(--accent))}
@@ -113,6 +116,16 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
 .cta-wrap{padding:20px 20px 20px;position:sticky;bottom:64px;background:linear-gradient(to top,var(--bg) 70%,transparent);z-index:2}
 .cta-btn{width:100%;height:56px;background:var(--accent);color:#0a0a0f;border:none;border-radius:16px;font-family:var(--sans);font-size:16px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:transform .12s,opacity .12s}
 .cta-btn:active{transform:scale(.97);opacity:.9}
+/* 3-dot menu */
+.menu-wrap{position:relative;display:inline-flex}
+.menu-btn{width:26px;height:26px;background:rgba(0,229,160,.1);border:1px solid rgba(0,229,160,.25);border-radius:7px;color:var(--accent);cursor:pointer;font-size:14px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;letter-spacing:1px;font-weight:700;line-height:1}
+.menu-btn:hover{background:rgba(0,229,160,.2)}
+.dropdown{position:absolute;right:0;top:32px;background:var(--surface);border:1px solid rgba(0,229,160,.2);border-radius:12px;padding:6px;z-index:100;min-width:190px;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.dropdown.hidden{display:none}
+.dropdown-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;cursor:pointer;font-size:13px;color:var(--text);border:none;background:none;width:100%;font-family:var(--sans);text-align:left}
+.dropdown-item:hover{background:rgba(0,229,160,.08)}
+.dropdown-item.danger{color:var(--danger)}
+.dropdown-item.danger:hover{background:rgba(255,77,109,.08)}
 #form-screen{background:var(--bg);padding-bottom:80px}
 .form-header{display:flex;align-items:center;padding:56px 24px 20px;gap:16px}
 .back-btn{width:38px;height:38px;background:var(--card);border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;color:var(--text);flex-shrink:0}
@@ -158,9 +171,11 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
 .proy-header{padding:56px 24px 20px}
 .proy-title{font-size:26px;font-weight:600;margin-bottom:4px}
 .proy-sub{font-size:13px;color:var(--muted);margin-bottom:20px}
-.proy-new-btn{width:100%;height:52px;background:rgba(0,229,160,.1);border:1.5px dashed var(--accent);border-radius:16px;color:var(--accent);font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
+.proy-new-btn{width:100%;height:52px;background:rgba(0,229,160,.08);border:1.5px dashed rgba(0,229,160,.5);border-radius:16px;color:var(--accent);font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
 .proy-list{padding:0 24px;display:flex;flex-direction:column;gap:12px;margin-top:20px}
-.proy-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;cursor:pointer;transition:border-color .2s}
+.proy-card{background:var(--card);border:1px solid rgba(0,229,160,.15);border-radius:16px;padding:18px;cursor:pointer;transition:border-color .2s;position:relative}
+.proy-card:active{transform:scale(.98)}
+.proy-card-top{display:flex;justify-content:space-between;align-items:flex-start}
 .proy-card-name{font-size:16px;font-weight:600;margin-bottom:4px}
 .proy-card-members{font-size:12px;color:var(--muted);margin-bottom:14px}
 .proy-card-stats{display:flex;gap:12px}
@@ -171,7 +186,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
 .empty-icon{font-size:48px;margin-bottom:16px}
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;display:flex;align-items:flex-end;justify-content:center}
 .modal-overlay.hidden{display:none}
-.modal{background:var(--surface);border-radius:24px 24px 0 0;padding:28px 24px 48px;width:100%;max-width:500px;max-height:90vh;overflow-y:auto}
+.modal{background:var(--surface);border-radius:24px 24px 0 0;padding:28px 24px 48px;width:100%;max-width:500px;max-height:90vh;overflow-y:auto;border-top:2px solid rgba(0,229,160,.3)}
 .modal-title{font-size:20px;font-weight:600;margin-bottom:20px}
 .modal-field{margin-bottom:16px}
 .modal-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-weight:500;margin-bottom:7px;display:block}
@@ -185,16 +200,16 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
 .det-back{width:38px;height:38px;background:var(--card);border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;flex-shrink:0;margin-top:2px}
 .det-title-wrap{flex:1}
 .det-title{font-size:22px;font-weight:600;margin-bottom:4px}
-.det-members{font-size:12px;color:var(--muted)}
-.det-tabs{display:flex;background:var(--card);margin:0 24px 20px;border-radius:12px;padding:4px;gap:4px}
+.det-members{font-size:12px;color:var(--accent);font-weight:500}
+.det-tabs{display:flex;background:var(--card);margin:0 24px 20px;border-radius:12px;padding:4px;gap:4px;border:1px solid rgba(0,229,160,.15)}
 .det-tab{flex:1;height:36px;border:none;border-radius:9px;font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer;background:transparent;color:var(--muted);transition:all .2s}
-.det-tab.active{background:var(--surface);color:var(--text)}
+.det-tab.active{background:rgba(0,229,160,.15);color:var(--accent);border:1px solid rgba(0,229,160,.3)}
 .det-section{padding:0 24px;display:none}
 .det-section.active{display:block}
 .det-section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
 .det-section-title{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-weight:500}
-.det-add-btn{font-size:12px;color:var(--accent);font-weight:500;cursor:pointer;background:none;border:none;font-family:var(--sans)}
-.meta-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px}
+.det-add-btn{font-size:12px;color:var(--accent);font-weight:500;cursor:pointer;background:rgba(0,229,160,.08);border:1px solid rgba(0,229,160,.3);border-radius:8px;font-family:var(--sans);padding:5px 10px}
+.meta-card{background:var(--card);border:1px solid rgba(0,229,160,.15);border-radius:16px;padding:16px;margin-bottom:12px}
 .meta-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
 .meta-name{font-size:15px;font-weight:600}
 .meta-monthly{font-size:11px;color:var(--muted);font-family:var(--mono);margin-top:2px}
@@ -202,30 +217,34 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
 .meta-total-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
 .meta-total-val{font-family:var(--mono);font-size:14px;font-weight:500;color:var(--accent)}
 .meta-progress-nums{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:6px}
-.meta-members-contrib{display:flex;flex-direction:column;gap:6px;margin-bottom:12px;margin-top:10px}
+.meta-members-contrib{display:flex;flex-direction:column;gap:6px;margin-bottom:12px;margin-top:10px;background:var(--surface);border-radius:10px;padding:10px 12px}
 .meta-member-row{display:flex;justify-content:space-between;align-items:center;font-size:12px}
 .meta-member-name{color:var(--muted)}
 .meta-member-val{font-family:var(--mono);font-weight:500;color:var(--text)}
-.meta-aporte-btn{width:100%;height:42px;background:rgba(0,229,160,.1);border:1px solid var(--accent);border-radius:10px;color:var(--accent);font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer}
-.gasto-conj-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px}
+.meta-aporte-btn{width:100%;height:42px;background:rgba(0,229,160,.1);border:1px solid rgba(0,229,160,.3);border-radius:10px;color:var(--accent);font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer}
+.gasto-conj-card{background:var(--card);border:1px solid rgba(77,124,255,.2);border-radius:16px;padding:16px;margin-bottom:12px}
 .gasto-conj-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
 .gasto-conj-name{font-size:15px;font-weight:600}
 .gasto-conj-presup{font-family:var(--mono);font-size:11px;color:var(--muted)}
-.gasto-conj-members{display:flex;flex-direction:column;gap:5px;margin-bottom:10px}
+.gasto-conj-members{display:flex;flex-direction:column;gap:5px;margin-bottom:10px;background:var(--surface);border-radius:10px;padding:10px 12px}
 .gasto-conj-member-row{display:flex;justify-content:space-between;font-size:12px}
 .gasto-conj-member-name{color:var(--muted)}
 .gasto-conj-member-val{font-family:var(--mono);font-weight:500}
-.gasto-conj-reg-btn{width:100%;height:42px;background:rgba(77,124,255,.1);border:1px solid var(--accent2);border-radius:10px;color:var(--accent2);font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer}
+.gasto-conj-reg-btn{width:100%;height:42px;background:rgba(77,124,255,.1);border:1px solid rgba(77,124,255,.3);border-radius:10px;color:var(--accent2);font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer}
+.gastos-filter{display:flex;gap:8px;margin-bottom:16px}
+.gastos-filter select{flex:1;height:38px;background:var(--card);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:var(--mono);font-size:13px;padding:0 10px;outline:none;-webkit-appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b6b8a' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px}
+.gastos-filter select option{background:#1a1a24}
 .inv-card{background:rgba(255,159,67,.08);border:1px solid rgba(255,159,67,.3);border-radius:14px;padding:14px 16px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
 .inv-info{flex:1}
 .inv-name{font-size:14px;font-weight:500;margin-bottom:2px}
 .inv-from{font-size:11px;color:var(--muted)}
 .inv-btn{height:36px;padding:0 14px;background:var(--accent);color:#0a0a0f;border:none;border-radius:10px;font-family:var(--sans);font-size:12px;font-weight:600;cursor:pointer}
-.cat-delete-btn{width:20px;height:20px;background:rgba(255,77,109,.12);border:none;border-radius:5px;color:var(--danger);cursor:pointer;font-size:13px;display:inline-flex;align-items:center;justify-content:center;margin-left:6px;flex-shrink:0;vertical-align:middle}
+.invite-section{background:var(--card);border:1px solid rgba(0,229,160,.2);border-radius:16px;padding:18px}
+.invite-section-title{font-size:14px;font-weight:600;margin-bottom:4px;color:var(--accent)}
+.invite-section-sub{font-size:12px;color:var(--muted);margin-bottom:16px}
 </style>
 </head>
 <body>
-
 <div class="loading-overlay" id="loading">
   <div class="loading-spinner"></div>
   <div class="loading-text">Cargando tus finanzas...</div>
@@ -240,17 +259,9 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
       <button class="auth-tab active" id="tab-login" onclick="switchTab('login')">Entrar</button>
       <button class="auth-tab" id="tab-register" onclick="switchTab('register')">Registrarse</button>
     </div>
-    <div class="auth-field">
-      <label class="auth-label">Correo</label>
-      <input class="auth-input" id="auth-email" type="email" placeholder="tu@correo.com" autocomplete="email">
-    </div>
-    <div class="auth-field">
-      <label class="auth-label">Contraseña</label>
-      <input class="auth-input" id="auth-pass" type="password" placeholder="••••••••">
-    </div>
-    <button class="auth-btn" id="auth-btn" onclick="authAction()">
-      <span id="auth-btn-label">Entrar</span>
-    </button>
+    <div class="auth-field"><label class="auth-label">Correo</label><input class="auth-input" id="auth-email" type="email" placeholder="tu@correo.com" autocomplete="email"></div>
+    <div class="auth-field"><label class="auth-label">Contraseña</label><input class="auth-input" id="auth-pass" type="password" placeholder="••••••••"></div>
+    <button class="auth-btn" id="auth-btn" onclick="authAction()"><span id="auth-btn-label">Entrar</span></button>
     <div class="auth-error" id="auth-error"></div>
   </div>
 </div>
@@ -271,23 +282,15 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
     <div class="ob-section">
       <div class="ob-section-title">Categorías con límite de gasto</div>
       <div class="ob-categories" id="ob-cats-limit"></div>
-      <div class="add-cat-row">
-        <input class="add-cat-input" id="new-cat-limit-name" placeholder="Nueva categoría...">
-        <button class="add-cat-btn" onclick="addCat('limit')">+ Agregar</button>
-      </div>
+      <div class="add-cat-row"><input class="add-cat-input" id="new-cat-limit-name" placeholder="Nueva categoría..."><button class="add-cat-btn" onclick="addCat('limit')">+ Agregar</button></div>
     </div>
     <div class="ob-section">
       <div class="ob-section-title">Categorías sin límite fijo</div>
       <div class="ob-categories" id="ob-cats-nolimit"></div>
-      <div class="add-cat-row">
-        <input class="add-cat-input" id="new-cat-nolimit-name" placeholder="Nueva categoría...">
-        <button class="add-cat-btn" onclick="addCat('nolimit')">+ Agregar</button>
-      </div>
+      <div class="add-cat-row"><input class="add-cat-input" id="new-cat-nolimit-name" placeholder="Nueva categoría..."><button class="add-cat-btn" onclick="addCat('nolimit')">+ Agregar</button></div>
     </div>
   </div>
-  <div class="ob-footer">
-    <button class="ob-btn" onclick="saveOnboarding()">Comenzar →</button>
-  </div>
+  <div class="ob-footer"><button class="ob-btn" onclick="saveOnboarding()">Comenzar →</button></div>
 </div>
 
 <div id="home" class="screen">
@@ -305,16 +308,19 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
     </div>
   </div>
   <div class="ing-card">
-    <div class="ing-header">
-      <span class="ing-title">Ingresos del mes</span>
-      <button class="ing-edit-btn" id="ing-toggle" onclick="toggleIngresos()">Editar</button>
-    </div>
+    <div class="ing-header"><span class="ing-title">Ingresos del mes</span><button class="ing-edit-btn" id="ing-toggle" onclick="toggleIngresos()">Editar</button></div>
     <div id="ing-view"></div>
     <div id="ing-edit" style="display:none"></div>
   </div>
-  <div class="section-title">Presupuestos con límite</div>
+  <div class="section-header">
+    <span class="section-title" style="padding:0;margin:0">Presupuestos con límite</span>
+    <button class="section-add-btn" onclick="showModalAddCat('limit')">+ Agregar</button>
+  </div>
   <div class="budget-list" id="budget-bars"></div>
-  <div class="section-title">Sin límite fijo</div>
+  <div class="section-header">
+    <span class="section-title" style="padding:0;margin:0">Sin límite fijo</span>
+    <button class="section-add-btn" onclick="showModalAddCat('nolimit')">+ Agregar</button>
+  </div>
   <div class="nolimit-list" id="nolimit-list"></div>
   <div class="section-title">Resumen del mes</div>
   <div class="resumen-card">
@@ -322,16 +328,11 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
     <div class="resumen-row"><span class="resumen-label">Gastos totales</span><span class="resumen-val gast" id="r-gast">—</span></div>
     <div class="resumen-row total"><span class="resumen-label">Disponible</span><span class="resumen-val" id="r-disp">—</span></div>
   </div>
-  <div class="cta-wrap">
-    <button class="cta-btn" onclick="goForm()">+ Registrar gasto</button>
-  </div>
+  <div class="cta-wrap"><button class="cta-btn" onclick="goForm()">+ Registrar gasto</button></div>
 </div>
 
 <div id="form-screen" class="screen">
-  <div class="form-header">
-    <div class="back-btn" onclick="goHome()">←</div>
-    <div class="form-title">Nuevo gasto</div>
-  </div>
+  <div class="form-header"><div class="back-btn" onclick="goHome()">←</div><div class="form-title">Nuevo gasto</div></div>
   <div class="form-body">
     <div class="field"><label class="field-label">Fecha del gasto</label><input type="date" id="fecha-gasto"></div>
     <div class="field"><label class="field-label">Monto ($)</label><input type="number" id="monto" placeholder="15000" inputmode="numeric"></div>
@@ -388,7 +389,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
   <div class="det-tabs">
     <button class="det-tab active" onclick="switchDetTab('ahorro')">💰 Ahorro</button>
     <button class="det-tab" onclick="switchDetTab('gastos')">💸 Gastos</button>
-    <button class="det-tab" onclick="switchDetTab('config')">⚙️ Config</button>
+    <button class="det-tab" onclick="switchDetTab('invitar')">✉️ Invitar</button>
   </div>
   <div class="det-section active" id="tab-ahorro">
     <div class="det-section-header">
@@ -402,15 +403,17 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
       <span class="det-section-title">Gastos compartidos</span>
       <button class="det-add-btn" onclick="showModal('modal-nueva-cat-gasto')">+ Nueva categoría</button>
     </div>
+    <div class="gastos-filter">
+      <select id="gastos-sel-mes" onchange="renderGastosConj()"></select>
+      <select id="gastos-sel-anio" onchange="renderGastosConj()"></select>
+    </div>
     <div id="gastos-conj-list"></div>
   </div>
-  <div class="det-section" id="tab-config">
-    <div style="padding-bottom:20px">
-      <div class="det-section-header"><span class="det-section-title">Invitar miembro</span></div>
-      <div class="modal-field">
-        <label class="modal-label">Correo del invitado</label>
-        <input class="modal-input" id="inv-email-input" type="email" placeholder="correo@ejemplo.com">
-      </div>
+  <div class="det-section" id="tab-invitar">
+    <div class="invite-section">
+      <div class="invite-section-title">✉️ Invitar miembro</div>
+      <div class="invite-section-sub">El usuario verá la invitación la próxima vez que entre a la app</div>
+      <div class="modal-field"><label class="modal-label">Correo del invitado</label><input class="modal-input" id="inv-email-input" type="email" placeholder="correo@ejemplo.com"></div>
       <button class="modal-btn" onclick="invitarMiembro()">Enviar invitación</button>
       <div class="modal-error" id="inv-error"></div>
     </div>
@@ -418,24 +421,20 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
 </div>
 
 <nav class="bottom-nav" id="bottom-nav" style="display:none">
-  <button class="nav-item active" id="nav-home" onclick="navTo('home')">
-    <span class="nav-icon">🏠</span>Personal
-  </button>
-  <button class="nav-item" id="nav-proyectos" onclick="navTo('proyectos')">
-    <span class="nav-icon">🤝</span>Proyectos
-  </button>
+  <button class="nav-item active" id="nav-home" onclick="navTo('home')"><span class="nav-icon">🏠</span>Personal</button>
+  <button class="nav-item" id="nav-proyectos" onclick="navTo('proyectos')"><span class="nav-icon">🤝</span>Proyectos</button>
 </nav>
 
+<!-- MODALES -->
 <div class="modal-overlay hidden" id="modal-nuevo-proyecto">
   <div class="modal">
     <div class="modal-title">Nuevo proyecto</div>
-    <div class="modal-field"><label class="modal-label">Nombre</label><input class="modal-input" id="np-nombre" type="text" placeholder="Ej: Fondo para la moto"></div>
+    <div class="modal-field"><label class="modal-label">Nombre</label><input class="modal-input" id="np-nombre" type="text" placeholder="Ej: Fran y Osvaldo"></div>
     <button class="modal-btn" onclick="crearProyecto()">Crear proyecto</button>
     <button class="modal-btn-sec" onclick="hideModal('modal-nuevo-proyecto')">Cancelar</button>
     <div class="modal-error" id="np-error"></div>
   </div>
 </div>
-
 <div class="modal-overlay hidden" id="modal-nueva-meta">
   <div class="modal">
     <div class="modal-title">Nueva meta de ahorro</div>
@@ -447,7 +446,16 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
     <div class="modal-error" id="nm-error"></div>
   </div>
 </div>
-
+<div class="modal-overlay hidden" id="modal-editar-meta">
+  <div class="modal">
+    <div class="modal-title">Editar meta</div>
+    <div class="modal-field"><label class="modal-label">Nuevo monto objetivo ($)</label><input class="modal-input" id="em-total" type="number" inputmode="numeric"></div>
+    <div class="modal-field"><label class="modal-label">Aporte mensual sugerido</label><input class="modal-input" id="em-mensual" type="number" inputmode="numeric"></div>
+    <button class="modal-btn" onclick="guardarEditarMeta()">Guardar cambios</button>
+    <button class="modal-btn-sec" onclick="hideModal('modal-editar-meta')">Cancelar</button>
+    <div class="modal-error" id="em-error"></div>
+  </div>
+</div>
 <div class="modal-overlay hidden" id="modal-aporte">
   <div class="modal">
     <div class="modal-title">Registrar aporte</div>
@@ -458,7 +466,6 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
     <div class="modal-error" id="ap-error"></div>
   </div>
 </div>
-
 <div class="modal-overlay hidden" id="modal-nueva-cat-gasto">
   <div class="modal">
     <div class="modal-title">Nueva categoría de gasto</div>
@@ -469,7 +476,6 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
     <div class="modal-error" id="ncg-error"></div>
   </div>
 </div>
-
 <div class="modal-overlay hidden" id="modal-gasto-conj">
   <div class="modal">
     <div class="modal-title">Registrar gasto</div>
@@ -481,224 +487,168 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
     <div class="modal-error" id="gc-error"></div>
   </div>
 </div>
+<div class="modal-overlay hidden" id="modal-editar-cat">
+  <div class="modal">
+    <div class="modal-title">Editar categoría</div>
+    <div class="modal-field"><label class="modal-label">Nuevo monto proyectado ($)</label><input class="modal-input" id="ec-monto" type="number" inputmode="numeric"></div>
+    <button class="modal-btn" onclick="guardarEditarCat()">Guardar</button>
+    <button class="modal-btn-sec" onclick="hideModal('modal-editar-cat')">Cancelar</button>
+  </div>
+</div>
+<div class="modal-overlay hidden" id="modal-add-cat">
+  <div class="modal">
+    <div class="modal-title" id="add-cat-title">Nueva categoría</div>
+    <div class="modal-field"><label class="modal-label">Nombre</label><input class="modal-input" id="ac-nombre" type="text" placeholder="Ej: Salud"></div>
+    <div class="modal-field" id="ac-limit-wrap"><label class="modal-label">Monto proyectado ($)</label><input class="modal-input" id="ac-monto" type="number" inputmode="numeric" placeholder="50000"></div>
+    <button class="modal-btn" onclick="guardarAddCat()">Agregar</button>
+    <button class="modal-btn-sec" onclick="hideModal('modal-add-cat')">Cancelar</button>
+    <div class="modal-error" id="ac-error"></div>
+  </div>
+</div>
 
 <script>
 const SUPABASE_URL = 'https://jnhkdcpmzaqzmrnahdfn.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_zNgbPpo_yovc3LfIq4nIFg_r_rxz7Y1';
-const { createClient } = supabase;
+const {createClient} = supabase;
 const sb = createClient(SUPABASE_URL, SUPABASE_KEY);
 
-let currentUser = null;
-let perfil = null;
-let gastosMes = {};
-let editingIngresos = false;
-let selectedCat = '';
-let selectedMes = new Date().getMonth() + 1;
-let selectedAnio = new Date().getFullYear();
-let authMode = 'login';
-let proyectos = [];
-let currentProyecto = null;
-let currentMetaId = null;
-let currentCategGastoId = null;
+let currentUser=null, perfil=null, gastosMes={}, editingIngresos=false;
+let selectedCat='', selectedMes=new Date().getMonth()+1, selectedAnio=new Date().getFullYear();
+let authMode='login', proyectos=[], currentProyecto=null, currentMetaId=null;
+let currentCategGastoId=null, editingCatName=null, editingCatType=null, editingMetaId=null;
+let addCatType='limit';
+let gastosMes_filter=new Date().getMonth()+1, gastosAnio_filter=new Date().getFullYear();
 
-let obCatsLimit = [
-  {name:'Arriendo',limit:0},{name:'Gastos Dpto',limit:0},
-  {name:'Supermercado',limit:0},{name:'Dep. a Plazo',limit:0},{name:'Personal',limit:0}
-];
-let obCatsNolimit = [{name:'Gasto no considerado'},{name:'Otros'}];
+let obCatsLimit=[{name:'Arriendo',limit:0},{name:'Gastos Dpto',limit:0},{name:'Supermercado',limit:0},{name:'Dep. a Plazo',limit:0},{name:'Personal',limit:0}];
+let obCatsNolimit=[{name:'Gasto no considerado'},{name:'Otros'}];
+const MONTHS=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
 
-const MONTHS = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
-
-function fmt(n){ return '$' + Math.round(n).toLocaleString('es-CL'); }
-
+function fmt(n){return '$'+Math.round(n).toLocaleString('es-CL');}
 function show(id){
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   window.scrollTo(0,0);
-  const navScreens = ['home','proyectos-screen','proyecto-detalle-screen'];
-  document.getElementById('bottom-nav').style.display = navScreens.includes(id) ? 'flex' : 'none';
+  const navScreens=['home','proyectos-screen','proyecto-detalle-screen'];
+  document.getElementById('bottom-nav').style.display=navScreens.includes(id)?'flex':'none';
 }
-
 function navTo(dest){
-  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-  if(dest === 'home'){
-    document.getElementById('nav-home').classList.add('active');
-    goHome();
-  } else {
-    document.getElementById('nav-proyectos').classList.add('active');
-    showProyectos();
-  }
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  if(dest==='home'){document.getElementById('nav-home').classList.add('active');goHome();}
+  else{document.getElementById('nav-proyectos').classList.add('active');showProyectos();}
 }
+function showModal(id){document.getElementById(id).classList.remove('hidden');}
+function hideModal(id){document.getElementById(id).classList.add('hidden');}
 
-function showModal(id){ document.getElementById(id).classList.remove('hidden'); }
-function hideModal(id){ document.getElementById(id).classList.add('hidden'); }
+// Close dropdowns on outside click
+document.addEventListener('click',e=>{
+  if(!e.target.closest('.menu-wrap')) document.querySelectorAll('.dropdown').forEach(d=>d.classList.add('hidden'));
+});
+function toggleDropdown(id,e){e.stopPropagation();document.querySelectorAll('.dropdown').forEach(d=>{if(d.id!==id)d.classList.add('hidden');});document.getElementById(id).classList.toggle('hidden');}
 
+// AUTH
 function switchTab(mode){
-  authMode = mode;
-  document.getElementById('tab-login').classList.toggle('active', mode==='login');
-  document.getElementById('tab-register').classList.toggle('active', mode==='register');
-  document.getElementById('auth-btn-label').textContent = mode==='login' ? 'Entrar' : 'Crear cuenta';
-  document.getElementById('auth-error').textContent = '';
+  authMode=mode;
+  document.getElementById('tab-login').classList.toggle('active',mode==='login');
+  document.getElementById('tab-register').classList.toggle('active',mode==='register');
+  document.getElementById('auth-btn-label').textContent=mode==='login'?'Entrar':'Crear cuenta';
+  document.getElementById('auth-error').textContent='';
 }
-
 async function authAction(){
-  const email = document.getElementById('auth-email').value.trim();
-  const pass = document.getElementById('auth-pass').value;
-  const errEl = document.getElementById('auth-error');
-  const btn = document.getElementById('auth-btn');
-  errEl.textContent = ''; btn.disabled = true;
-  try {
-    if(authMode==='login'){
-      const {error} = await sb.auth.signInWithPassword({email, password:pass});
-      if(error) throw error;
-    } else {
-      const {error} = await sb.auth.signUp({email, password:pass});
-      if(error) throw error;
-    }
-  } catch(e){
-    const msgs = {
-      'Invalid login credentials':'Correo o contraseña incorrectos.',
-      'User already registered':'Este correo ya está registrado.',
-      'Password should be at least 6 characters':'La contraseña debe tener al menos 6 caracteres.'
-    };
-    errEl.textContent = msgs[e.message] || e.message;
+  const email=document.getElementById('auth-email').value.trim();
+  const pass=document.getElementById('auth-pass').value;
+  const errEl=document.getElementById('auth-error');
+  const btn=document.getElementById('auth-btn');
+  errEl.textContent='';btn.disabled=true;
+  try{
+    if(authMode==='login'){const {error}=await sb.auth.signInWithPassword({email,password:pass});if(error)throw error;}
+    else{const {error}=await sb.auth.signUp({email,password:pass});if(error)throw error;}
+  }catch(e){
+    const msgs={'Invalid login credentials':'Correo o contraseña incorrectos.','User already registered':'Este correo ya está registrado.','Password should be at least 6 characters':'La contraseña debe tener al menos 6 caracteres.'};
+    errEl.textContent=msgs[e.message]||e.message;
   }
-  btn.disabled = false;
+  btn.disabled=false;
 }
-document.getElementById('auth-pass').addEventListener('keydown', e => { if(e.key==='Enter') authAction(); });
-async function doLogout(){ await sb.auth.signOut(); }
+document.getElementById('auth-pass').addEventListener('keydown',e=>{if(e.key==='Enter')authAction();});
+async function doLogout(){await sb.auth.signOut();}
 
-async function loadPerfil(){
-  const {data} = await sb.from('perfiles').select('*').eq('id', currentUser.id).single();
-  return data;
-}
-async function savePerfil(updates){
-  await sb.from('perfiles').upsert({id: currentUser.id, ...updates});
-}
+// PERFIL
+async function loadPerfil(){const {data}=await sb.from('perfiles').select('*').eq('id',currentUser.id).single();return data;}
+async function savePerfil(updates){await sb.from('perfiles').upsert({id:currentUser.id,...updates});}
 
 function renderObCats(){
-  const limitEl = document.getElementById('ob-cats-limit');
-  const nolimitEl = document.getElementById('ob-cats-nolimit');
-  limitEl.innerHTML = '';
-  obCatsLimit.forEach((cat,i) => {
-    const div = document.createElement('div');
-    div.className = 'ob-cat-item';
-    div.innerHTML = '<span class="ob-cat-name">'+cat.name+'</span><input class="ob-cat-limit" type="number" inputmode="numeric" placeholder="Límite" value="'+(cat.limit||'')+'" oninput="obCatsLimit['+i+'].limit=parseInt(this.value)||0"><button class="ob-cat-remove" onclick="removeObCat(\'limit\','+i+')">×</button>';
+  const limitEl=document.getElementById('ob-cats-limit');
+  const nolimitEl=document.getElementById('ob-cats-nolimit');
+  limitEl.innerHTML='';
+  obCatsLimit.forEach((cat,i)=>{
+    const div=document.createElement('div');div.className='ob-cat-item';
+    div.innerHTML='<span class="ob-cat-name">'+cat.name+'</span><input class="ob-cat-limit" type="number" inputmode="numeric" placeholder="Límite" value="'+(cat.limit||'')+'" oninput="obCatsLimit['+i+'].limit=parseInt(this.value)||0"><button class="ob-cat-remove" onclick="removeObCat(\'limit\','+i+')">×</button>';
     limitEl.appendChild(div);
   });
-  nolimitEl.innerHTML = '';
-  obCatsNolimit.forEach((cat,i) => {
-    const div = document.createElement('div');
-    div.className = 'ob-cat-item';
-    div.innerHTML = '<span class="ob-cat-name" style="color:var(--muted)">'+cat.name+'</span><button class="ob-cat-remove" onclick="removeObCat(\'nolimit\','+i+')">×</button>';
+  nolimitEl.innerHTML='';
+  obCatsNolimit.forEach((cat,i)=>{
+    const div=document.createElement('div');div.className='ob-cat-item';
+    div.innerHTML='<span class="ob-cat-name" style="color:var(--muted)">'+cat.name+'</span><button class="ob-cat-remove" onclick="removeObCat(\'nolimit\','+i+')">×</button>';
     nolimitEl.appendChild(div);
   });
 }
-
-function removeObCat(type,i){
-  if(type==='limit') obCatsLimit.splice(i,1); else obCatsNolimit.splice(i,1);
-  renderObCats();
-}
+function removeObCat(type,i){if(type==='limit')obCatsLimit.splice(i,1);else obCatsNolimit.splice(i,1);renderObCats();}
 function addCat(type){
-  const inputId = type==='limit'?'new-cat-limit-name':'new-cat-nolimit-name';
-  const name = document.getElementById(inputId).value.trim();
-  if(!name) return;
-  if(type==='limit') obCatsLimit.push({name, limit:0}); else obCatsNolimit.push({name});
-  document.getElementById(inputId).value = '';
-  renderObCats();
+  const inputId=type==='limit'?'new-cat-limit-name':'new-cat-nolimit-name';
+  const name=document.getElementById(inputId).value.trim();
+  if(!name)return;
+  if(type==='limit')obCatsLimit.push({name,limit:0});else obCatsNolimit.push({name});
+  document.getElementById(inputId).value='';renderObCats();
 }
-
 async function saveOnboarding(){
-  const fijo = parseInt(document.getElementById('ob-fijo').value)||0;
-  const variable = parseInt(document.getElementById('ob-variable').value)||0;
-  const otros = parseInt(document.getElementById('ob-otros-ing').value)||0;
-  const presupuesto = {};
-  obCatsLimit.forEach(c => { if(c.name) presupuesto[c.name] = c.limit||0; });
-  const categorias = [
-    ...obCatsLimit.map(c => ({name:c.name, type:'limit'})),
-    ...obCatsNolimit.map(c => ({name:c.name, type:'nolimit'}))
-  ];
-  await savePerfil({
-    ingreso_fijo:fijo, ingreso_variable:variable, ingreso_otro:otros,
-    categorias:JSON.stringify(categorias), presupuesto:JSON.stringify(presupuesto)
-  });
-  perfil = await loadPerfil();
-  initHome();
-  show('home');
-  await fetchGastos(); renderHome();
+  const fijo=parseInt(document.getElementById('ob-fijo').value)||0;
+  const variable=parseInt(document.getElementById('ob-variable').value)||0;
+  const otros=parseInt(document.getElementById('ob-otros-ing').value)||0;
+  const presupuesto={};obCatsLimit.forEach(c=>{if(c.name)presupuesto[c.name]=c.limit||0;});
+  const categorias=[...obCatsLimit.map(c=>({name:c.name,type:'limit'})),...obCatsNolimit.map(c=>({name:c.name,type:'nolimit'}))];
+  await savePerfil({ingreso_fijo:fijo,ingreso_variable:variable,ingreso_otro:otros,categorias:JSON.stringify(categorias),presupuesto:JSON.stringify(presupuesto)});
+  perfil=await loadPerfil();initHome();show('home');await fetchGastos();renderHome();
 }
 
 function getPerfil(){
-  return {
-    fijo: perfil?.ingreso_fijo||0, variable: perfil?.ingreso_variable||0, otros: perfil?.ingreso_otro||0,
-    categorias: JSON.parse(perfil?.categorias||'[]'), presupuesto: JSON.parse(perfil?.presupuesto||'{}'),
-  };
+  return{fijo:perfil?.ingreso_fijo||0,variable:perfil?.ingreso_variable||0,otros:perfil?.ingreso_otro||0,
+    categorias:JSON.parse(perfil?.categorias||'[]'),presupuesto:JSON.parse(perfil?.presupuesto||'{}')};
 }
-function totalIngresos(){ const p=getPerfil(); return p.fijo+p.variable+p.otros; }
+function totalIngresos(){const p=getPerfil();return p.fijo+p.variable+p.otros;}
 
 function initSelectors(){
-  const selMes = document.getElementById('sel-mes');
-  selMes.innerHTML = '';
-  MONTHS.forEach((m,i) => {
-    const opt = document.createElement('option');
-    opt.value=i+1; opt.textContent=m;
-    if(i+1===selectedMes) opt.selected=true;
-    selMes.appendChild(opt);
-  });
-  const selAnio = document.getElementById('sel-anio');
-  selAnio.innerHTML = '';
-  const now = new Date().getFullYear();
-  for(let y=now-2;y<=now+1;y++){
-    const opt=document.createElement('option');
-    opt.value=y; opt.textContent=y;
-    if(y===selectedAnio) opt.selected=true;
-    selAnio.appendChild(opt);
-  }
+  const selMes=document.getElementById('sel-mes');selMes.innerHTML='';
+  MONTHS.forEach((m,i)=>{const opt=document.createElement('option');opt.value=i+1;opt.textContent=m;if(i+1===selectedMes)opt.selected=true;selMes.appendChild(opt);});
+  const selAnio=document.getElementById('sel-anio');selAnio.innerHTML='';
+  const now=new Date().getFullYear();
+  for(let y=now-2;y<=now+1;y++){const opt=document.createElement('option');opt.value=y;opt.textContent=y;if(y===selectedAnio)opt.selected=true;selAnio.appendChild(opt);}
 }
-
 function renderIngView(){
   const p=getPerfil();
-  const labels=[
-    {key:'fijo',label:'Ingreso fijo',val:p.fijo},
-    {key:'variable',label:'Ingreso variable',val:p.variable},
-    {key:'otros',label:'Otros ingresos',val:p.otros},
-  ];
-  document.getElementById('ing-view').innerHTML = labels.map(l =>
-    '<div class="ing-row"><span class="ing-name">'+l.label+'</span><span class="ing-val">'+fmt(l.val)+'</span></div>'
-  ).join('');
-  document.getElementById('ing-edit').innerHTML = labels.map(l =>
-    '<div class="ing-row"><span class="ing-name">'+l.label+'</span><input class="ing-input" id="e-'+l.key+'" type="number" inputmode="numeric" value="'+l.val+'"></div>'
-  ).join('');
+  const labels=[{key:'fijo',label:'Ingreso fijo',val:p.fijo},{key:'variable',label:'Ingreso variable',val:p.variable},{key:'otros',label:'Otros ingresos',val:p.otros}];
+  document.getElementById('ing-view').innerHTML=labels.map(l=>'<div class="ing-row"><span class="ing-name">'+l.label+'</span><span class="ing-val">'+fmt(l.val)+'</span></div>').join('');
+  document.getElementById('ing-edit').innerHTML=labels.map(l=>'<div class="ing-row"><span class="ing-name">'+l.label+'</span><input class="ing-input" id="e-'+l.key+'" type="number" inputmode="numeric" value="'+l.val+'"></div>').join('');
 }
-
-function initHome(){
-  initSelectors(); renderIngView();
-  document.getElementById('home-title').textContent = currentUser.email.split('@')[0];
-}
-
+function initHome(){initSelectors();renderIngView();document.getElementById('home-title').textContent=currentUser.email.split('@')[0];}
 async function toggleIngresos(){
-  editingIngresos = !editingIngresos;
-  document.getElementById('ing-view').style.display = editingIngresos?'none':'block';
-  document.getElementById('ing-edit').style.display = editingIngresos?'block':'none';
-  document.getElementById('ing-toggle').textContent = editingIngresos?'Guardar':'Editar';
+  editingIngresos=!editingIngresos;
+  document.getElementById('ing-view').style.display=editingIngresos?'none':'block';
+  document.getElementById('ing-edit').style.display=editingIngresos?'block':'none';
+  document.getElementById('ing-toggle').textContent=editingIngresos?'Guardar':'Editar';
   if(!editingIngresos){
     const fijo=parseInt(document.getElementById('e-fijo').value)||0;
     const variable=parseInt(document.getElementById('e-variable').value)||0;
     const otros=parseInt(document.getElementById('e-otros').value)||0;
-    await savePerfil({ingreso_fijo:fijo, ingreso_variable:variable, ingreso_otro:otros});
-    perfil = await loadPerfil(); renderIngView(); renderHome();
+    await savePerfil({ingreso_fijo:fijo,ingreso_variable:variable,ingreso_otro:otros});
+    perfil=await loadPerfil();renderIngView();renderHome();
   }
 }
-
 async function fetchGastos(){
-  if(!currentUser) return;
+  if(!currentUser)return;
   const start=selectedAnio+'-'+String(selectedMes).padStart(2,'0')+'-01';
-  const endDay=new Date(selectedAnio, selectedMes, 0).getDate();
+  const endDay=new Date(selectedAnio,selectedMes,0).getDate();
   const end=selectedAnio+'-'+String(selectedMes).padStart(2,'0')+'-'+endDay;
-  const {data} = await sb.from('transacciones').select('categoria,monto')
-    .eq('user_id',currentUser.id).gte('fecha',start).lte('fecha',end);
-  gastosMes = {};
-  if(data) data.forEach(r => { gastosMes[r.categoria]=(gastosMes[r.categoria]||0)+Number(r.monto); });
+  const {data}=await sb.from('transacciones').select('categoria,monto').eq('user_id',currentUser.id).gte('fecha',start).lte('fecha',end);
+  gastosMes={};if(data)data.forEach(r=>{gastosMes[r.categoria]=(gastosMes[r.categoria]||0)+Number(r.monto);});
 }
 
 function renderHome(){
@@ -709,92 +659,109 @@ function renderHome(){
   document.getElementById('r-ing').textContent=fmt(ing);
   document.getElementById('r-gast').textContent='−'+fmt(totalGastado);
   const rDisp=document.getElementById('r-disp');
-  rDisp.textContent=fmt(Math.abs(disponible));
-  rDisp.className='resumen-val '+(disponible>=0?'pos':'neg');
-  const bc=document.getElementById('budget-bars');
-  bc.innerHTML='';
-  p.categorias.filter(c=>c.type==='limit').forEach(cat=>{
+  rDisp.textContent=fmt(Math.abs(disponible));rDisp.className='resumen-val '+(disponible>=0?'pos':'neg');
+
+  const bc=document.getElementById('budget-bars');bc.innerHTML='';
+  p.categorias.filter(c=>c.type==='limit').forEach((cat,idx)=>{
     const presup=p.presupuesto[cat.name]||0;
     const gastado=gastosMes[cat.name]||0;
-    if(!presup) return;
+    if(!presup)return;
     const pct=Math.min(gastado/presup*100,100);
     const barClass=pct<80?'bar-ok':pct<100?'bar-warn':'bar-over';
     const restante=presup-gastado;
     const restLabel=restante>=0?'<span style="color:var(--accent)">Restante: '+fmt(restante)+'</span>':'<span style="color:var(--danger)">Exceso: '+fmt(Math.abs(restante))+'</span>';
-    const item=document.createElement('div');
-    item.className='budget-item';
-    item.innerHTML='<div class="budget-top"><span class="budget-name">'+cat.name+'<button class="cat-delete-btn" onclick="deleteCategoria(\''+cat.name+'\')">×</button></span><span class="budget-nums">'+fmt(gastado)+' / '+fmt(presup)+'</span></div><div class="bar-track"><div class="bar-fill '+barClass+'" style="width:'+pct+'%"></div></div><div class="budget-restante">'+restLabel+'</div>';
+    const ddId='dd-limit-'+idx;
+    const item=document.createElement('div');item.className='budget-item';
+    item.innerHTML='<div class="budget-top"><span class="budget-name">'+cat.name+
+      '<span class="menu-wrap"><button class="menu-btn" onclick="toggleDropdown(\''+ddId+'\',event)">···</button>'+
+      '<div class="dropdown hidden" id="'+ddId+'">'+
+      '<button class="dropdown-item" onclick="showEditCat(\''+cat.name+'\',\'limit\','+presup+')">✏️ Cambiar monto</button>'+
+      '<button class="dropdown-item danger" onclick="deleteCategoria(\''+cat.name+'\')">🗑️ Eliminar</button>'+
+      '</div></span></span>'+
+      '<span class="budget-nums">'+fmt(gastado)+' / '+fmt(presup)+'</span></div>'+
+      '<div class="bar-track"><div class="bar-fill '+barClass+'" style="width:'+pct+'%"></div></div>'+
+      '<div class="budget-restante">'+restLabel+'</div>';
     bc.appendChild(item);
   });
-  const nl=document.getElementById('nolimit-list');
-  nl.innerHTML='';
-  p.categorias.filter(c=>c.type==='nolimit').forEach(cat=>{
+
+  const nl=document.getElementById('nolimit-list');nl.innerHTML='';
+  p.categorias.filter(c=>c.type==='nolimit').forEach((cat,idx)=>{
     const gastado=gastosMes[cat.name]||0;
-    const item=document.createElement('div');
-    item.className='nolimit-item';
-    item.innerHTML='<span class="nolimit-name">'+cat.name+'<button class="cat-delete-btn" onclick="deleteCategoria(\''+cat.name+'\')">×</button></span><span class="nolimit-val">'+fmt(gastado)+'</span>';
+    const ddId='dd-nolimit-'+idx;
+    const item=document.createElement('div');item.className='nolimit-item';
+    item.innerHTML='<span class="nolimit-name">'+cat.name+
+      '<span class="menu-wrap"><button class="menu-btn" onclick="toggleDropdown(\''+ddId+'\',event)">···</button>'+
+      '<div class="dropdown hidden" id="'+ddId+'">'+
+      '<button class="dropdown-item danger" onclick="deleteCategoria(\''+cat.name+'\')">🗑️ Eliminar</button>'+
+      '</div></span></span>'+
+      '<span class="nolimit-val">'+fmt(gastado)+'</span>';
     nl.appendChild(item);
   });
 }
 
+function showEditCat(nombre,type,montoActual){
+  editingCatName=nombre;editingCatType=type;
+  document.getElementById('ec-monto').value=montoActual;
+  showModal('modal-editar-cat');
+}
+async function guardarEditarCat(){
+  const nuevoMonto=parseInt(document.getElementById('ec-monto').value)||0;
+  const p=getPerfil();
+  const nuevoPresup={...p.presupuesto};nuevoPresup[editingCatName]=nuevoMonto;
+  await savePerfil({presupuesto:JSON.stringify(nuevoPresup)});
+  perfil=await loadPerfil();hideModal('modal-editar-cat');renderHome();
+}
 async function deleteCategoria(nombre){
-  if(!confirm('¿Eliminar la categoría "'+nombre+'"? Los gastos registrados no se borran.')) return;
+  if(!confirm('¿Eliminar la categoría "'+nombre+'"?'))return;
   const p=getPerfil();
   const nuevasCats=p.categorias.filter(c=>c.name!==nombre);
-  const nuevoPresup={...p.presupuesto};
-  delete nuevoPresup[nombre];
-  await savePerfil({categorias:JSON.stringify(nuevasCats), presupuesto:JSON.stringify(nuevoPresup)});
-  perfil=await loadPerfil();
-  renderHome();
+  const nuevoPresup={...p.presupuesto};delete nuevoPresup[nombre];
+  await savePerfil({categorias:JSON.stringify(nuevasCats),presupuesto:JSON.stringify(nuevoPresup)});
+  perfil=await loadPerfil();renderHome();
+}
+function showModalAddCat(type){
+  addCatType=type;
+  document.getElementById('add-cat-title').textContent=type==='limit'?'Nueva categoría con límite':'Nueva categoría sin límite';
+  document.getElementById('ac-limit-wrap').style.display=type==='limit'?'block':'none';
+  document.getElementById('ac-nombre').value='';
+  document.getElementById('ac-monto').value='';
+  document.getElementById('ac-error').textContent='';
+  showModal('modal-add-cat');
+}
+async function guardarAddCat(){
+  const nombre=document.getElementById('ac-nombre').value.trim();
+  const monto=parseInt(document.getElementById('ac-monto').value)||0;
+  if(!nombre){document.getElementById('ac-error').textContent='Ingresa un nombre';return;}
+  const p=getPerfil();
+  const nuevasCats=[...p.categorias,{name:nombre,type:addCatType}];
+  const nuevoPresup={...p.presupuesto};if(addCatType==='limit')nuevoPresup[nombre]=monto;
+  await savePerfil({categorias:JSON.stringify(nuevasCats),presupuesto:JSON.stringify(nuevoPresup)});
+  perfil=await loadPerfil();hideModal('modal-add-cat');renderHome();
 }
 
-async function onPeriodChange(){
-  selectedMes=parseInt(document.getElementById('sel-mes').value);
-  selectedAnio=parseInt(document.getElementById('sel-anio').value);
-  await fetchGastos(); renderHome();
-}
-async function refreshData(){
-  const btn=document.getElementById('refresh-btn');
-  btn.classList.add('spinning');
-  await fetchGastos(); renderHome();
-  btn.classList.remove('spinning');
-}
-function goHome(){
-  document.getElementById('nav-home').classList.add('active');
-  document.getElementById('nav-proyectos').classList.remove('active');
-  renderHome(); show('home');
-}
+async function onPeriodChange(){selectedMes=parseInt(document.getElementById('sel-mes').value);selectedAnio=parseInt(document.getElementById('sel-anio').value);await fetchGastos();renderHome();}
+async function refreshData(){const btn=document.getElementById('refresh-btn');btn.classList.add('spinning');await fetchGastos();renderHome();btn.classList.remove('spinning');}
+function goHome(){document.getElementById('nav-home').classList.add('active');document.getElementById('nav-proyectos').classList.remove('active');renderHome();show('home');}
 
 function buildCatGrid(){
-  const grid=document.getElementById('cat-grid');
-  grid.innerHTML='';
+  const grid=document.getElementById('cat-grid');grid.innerHTML='';
   const p=getPerfil();
   p.categorias.forEach((cat,i)=>{
-    const btn=document.createElement('button');
-    btn.className='cat-btn';
-    if(i===p.categorias.length-1 && p.categorias.length%2!==0) btn.style.gridColumn='1/-1';
+    const btn=document.createElement('button');btn.className='cat-btn';
+    if(i===p.categorias.length-1&&p.categorias.length%2!==0)btn.style.gridColumn='1/-1';
     btn.innerHTML='<span class="cat-num">'+(i+1)+'</span>'+cat.name;
-    btn.onclick=()=>selectCat(btn, cat.name);
-    grid.appendChild(btn);
+    btn.onclick=()=>selectCat(btn,cat.name);grid.appendChild(btn);
   });
 }
 function goForm(){
-  selectedCat='';
-  document.getElementById('monto').value='';
-  document.getElementById('descripcion').value='';
+  selectedCat='';document.getElementById('monto').value='';document.getElementById('descripcion').value='';
   document.getElementById('fecha-gasto').value=new Date().toISOString().split('T')[0];
-  buildCatGrid(); updateSubmitBtn();
-  show('form-screen');
+  buildCatGrid();updateSubmitBtn();show('form-screen');
   setTimeout(()=>document.getElementById('monto').focus(),300);
 }
-function selectCat(btn,cat){
-  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('selected'));
-  btn.classList.add('selected'); selectedCat=cat; updateSubmitBtn();
-}
+function selectCat(btn,cat){document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');selectedCat=cat;updateSubmitBtn();}
 function updateSubmitBtn(){
-  const btn=document.getElementById('submit-btn');
-  const lbl=document.getElementById('submit-label');
-  const monto=document.getElementById('monto').value;
+  const btn=document.getElementById('submit-btn');const lbl=document.getElementById('submit-label');const monto=document.getElementById('monto').value;
   if(selectedCat&&monto&&parseInt(monto)>0){btn.disabled=false;lbl.textContent='Registrar gasto';}
   else if(!selectedCat){btn.disabled=true;lbl.textContent='Selecciona una categoría';}
   else{btn.disabled=true;lbl.textContent='Ingresa el monto';}
@@ -805,142 +772,139 @@ async function submitGasto(){
   const monto=parseInt(document.getElementById('monto').value);
   const desc=document.getElementById('descripcion').value||'—';
   const fechaVal=document.getElementById('fecha-gasto').value;
-  if(!monto||!selectedCat||!fechaVal) return;
-  const btn=document.getElementById('submit-btn');
-  const lbl=document.getElementById('submit-label');
-  const sp=document.getElementById('spinner');
-  btn.disabled=true; sp.style.display='block'; lbl.textContent='Guardando...';
-  const parts=fechaVal.split('-');
-  const yyyy=parts[0]; const mm=parts[1]; const dd=parts[2];
+  if(!monto||!selectedCat||!fechaVal)return;
+  const btn=document.getElementById('submit-btn');const lbl=document.getElementById('submit-label');const sp=document.getElementById('spinner');
+  btn.disabled=true;sp.style.display='block';lbl.textContent='Guardando...';
+  const parts=fechaVal.split('-');const yyyy=parts[0];const mm=parts[1];const dd=parts[2];
   const {error}=await sb.from('transacciones').insert({user_id:currentUser.id,fecha:fechaVal,monto,categoria:selectedCat,descripcion:desc});
   sp.style.display='none';
   if(error){lbl.textContent='Error al guardar';btn.disabled=false;return;}
-  selectedMes=parseInt(mm); selectedAnio=parseInt(yyyy);
-  document.getElementById('sel-mes').value=selectedMes;
-  document.getElementById('sel-anio').value=selectedAnio;
+  selectedMes=parseInt(mm);selectedAnio=parseInt(yyyy);
+  document.getElementById('sel-mes').value=selectedMes;document.getElementById('sel-anio').value=selectedAnio;
   gastosMes[selectedCat]=(gastosMes[selectedCat]||0)+monto;
   document.getElementById('s-fecha').textContent=dd+'/'+mm+'/'+yyyy;
   document.getElementById('s-monto').textContent=fmt(monto);
   document.getElementById('s-cat').textContent=selectedCat;
   document.getElementById('s-desc').textContent=desc;
   document.getElementById('success-sub').textContent=selectedCat+' · '+dd+'/'+mm+'/'+yyyy;
-  renderBudgetSummary();
-  show('success-screen');
+  renderBudgetSummary();show('success-screen');
 }
-
 function renderBudgetSummary(){
-  const container=document.getElementById('bs-rows');
-  container.innerHTML='';
+  const container=document.getElementById('bs-rows');container.innerHTML='';
   const p=getPerfil();
   p.categorias.filter(c=>c.type==='limit').forEach(cat=>{
-    const presup=p.presupuesto[cat.name]||0;
-    if(!presup) return;
-    const gastado=gastosMes[cat.name]||0;
-    const restante=presup-gastado;
-    const pct=gastado/presup;
+    const presup=p.presupuesto[cat.name]||0;if(!presup)return;
+    const gastado=gastosMes[cat.name]||0;const restante=presup-gastado;const pct=gastado/presup;
     const cls=pct<0.8?'ok':pct<1?'warn':'over';
-    const row=document.createElement('div');
-    row.className='bs-row';
+    const row=document.createElement('div');row.className='bs-row';
     row.innerHTML='<span class="bs-name">'+cat.name+'</span><span class="bs-gastado '+cls+'">'+fmt(gastado)+'</span><span class="bs-restante '+(restante>=0?'ok':'over')+'">'+(restante>=0?fmt(restante):'−'+fmt(Math.abs(restante)))+'</span>';
     container.appendChild(row);
   });
 }
 
+// PROYECTOS
 async function showProyectos(){
-  document.getElementById('nav-proyectos').classList.add('active');
-  document.getElementById('nav-home').classList.remove('active');
-  show('proyectos-screen');
-  await loadProyectos();
-  await loadInvitaciones();
+  document.getElementById('nav-proyectos').classList.add('active');document.getElementById('nav-home').classList.remove('active');
+  show('proyectos-screen');await loadProyectos();await loadInvitaciones();
 }
-
 async function loadProyectos(){
-  const {data:memData} = await sb.from('proyecto_miembros').select('proyecto_id').eq('user_id', currentUser.id);
-  const ids = (memData||[]).map(m=>m.proyecto_id);
-  const {data:creados} = await sb.from('proyectos').select('*').eq('creado_por', currentUser.id);
-  const creadosIds = (creados||[]).map(p=>p.id);
-  const allIds = [...new Set([...ids, ...creadosIds])];
-  if(allIds.length===0){ proyectos=[]; renderProyectos(); return; }
-  const {data} = await sb.from('proyectos').select('*').in('id', allIds);
-  proyectos = data||[];
-  renderProyectos();
+  const {data:memData}=await sb.from('proyecto_miembros').select('proyecto_id').eq('user_id',currentUser.id);
+  const ids=(memData||[]).map(m=>m.proyecto_id);
+  const {data:creados}=await sb.from('proyectos').select('*').eq('creado_por',currentUser.id);
+  const creadosIds=(creados||[]).map(p=>p.id);
+  const allIds=[...new Set([...ids,...creadosIds])];
+  if(allIds.length===0){proyectos=[];renderProyectos();return;}
+  const {data}=await sb.from('proyectos').select('*').in('id',allIds);
+  proyectos=data||[];renderProyectos();
 }
-
 function renderProyectos(){
-  const list = document.getElementById('proy-list');
-  if(proyectos.length===0){
-    list.innerHTML='<div class="empty-state"><div class="empty-icon">🤝</div>No tienes proyectos aún</div>';
-    return;
-  }
+  const list=document.getElementById('proy-list');
+  if(proyectos.length===0){list.innerHTML='<div class="empty-state"><div class="empty-icon">🤝</div>No tienes proyectos aún</div>';return;}
   list.innerHTML='';
-  proyectos.forEach(p=>{
-    const card=document.createElement('div');
-    card.className='proy-card';
-    card.innerHTML='<div class="proy-card-name">'+p.nombre+'</div><div class="proy-card-members" id="pm-'+p.id+'">Cargando miembros...</div><div class="proy-card-stats"><div class="proy-stat"><div class="proy-stat-label">Proyecto</div><div class="proy-stat-val">Ver detalle →</div></div></div>';
-    card.onclick=()=>openProyecto(p);
-    list.appendChild(card);
-    loadMembersLabel(p.id);
+  proyectos.forEach((p,idx)=>{
+    const ddId='dd-proy-'+idx;
+    const card=document.createElement('div');card.className='proy-card';
+    card.innerHTML='<div class="proy-card-top"><div><div class="proy-card-name">'+p.nombre+'</div><div class="proy-card-members" id="pm-'+p.id+'">Cargando...</div></div>'+
+      '<span class="menu-wrap"><button class="menu-btn" onclick="toggleDropdown(\''+ddId+'\',event)">···</button>'+
+      '<div class="dropdown hidden" id="'+ddId+'">'+
+      '<button class="dropdown-item danger" onclick="salirProyecto(\''+p.id+'\',\''+p.creado_por+'\')">🚪 Salir del proyecto</button>'+
+      '</div></span></div>'+
+      '<div class="proy-card-stats"><div class="proy-stat"><div class="proy-stat-label">Proyecto</div><div class="proy-stat-val">Ver detalle →</div></div></div>';
+    card.querySelector('.proy-card-stats').onclick=()=>openProyecto(p);
+    card.querySelector('.proy-card-name').onclick=()=>openProyecto(p);
+    list.appendChild(card);loadMembersLabel(p.id);
   });
 }
-
-async function loadMembersLabel(proyId){
-  const {data} = await sb.from('proyecto_miembros').select('email').eq('proyecto_id', proyId);
-  const el = document.getElementById('pm-'+proyId);
-  if(el && data) el.textContent = data.map(m=>m.email.split('@')[0]).join(', ');
+async function salirProyecto(proyId,creadoPor){
+  if(!confirm('¿Salir de este proyecto?'))return;
+  const {data:miembros}=await sb.from('proyecto_miembros').select('user_id').eq('proyecto_id',proyId);
+  const soloYo=miembros&&miembros.length<=1;
+  if(soloYo||creadoPor===currentUser.id){
+    // Eliminar todo
+    await sb.from('aportes_ahorro').delete().eq('proyecto_id',proyId);
+    await sb.from('gastos_conjuntos').delete().eq('proyecto_id',proyId);
+    await sb.from('categorias_gasto_conjunto').delete().eq('proyecto_id',proyId);
+    await sb.from('metas_ahorro').delete().eq('proyecto_id',proyId);
+    await sb.from('proyecto_miembros').delete().eq('proyecto_id',proyId);
+    await sb.from('invitaciones').delete().eq('proyecto_id',proyId);
+    await sb.from('proyectos').delete().eq('id',proyId);
+  } else {
+    await sb.from('proyecto_miembros').delete().eq('proyecto_id',proyId).eq('user_id',currentUser.id);
+  }
+  await loadProyectos();
 }
-
+async function loadMembersLabel(proyId){
+  const {data}=await sb.from('proyecto_miembros').select('email').eq('proyecto_id',proyId);
+  const el=document.getElementById('pm-'+proyId);
+  if(el&&data)el.textContent=data.map(m=>m.email.split('@')[0]).join(' · ');
+}
 async function loadInvitaciones(){
-  const {data} = await sb.from('invitaciones')
-    .select('*, proyectos(nombre)')
-    .eq('email_invitado', currentUser.email)
-    .eq('aceptada', false);
-  const invList = document.getElementById('inv-list');
-  invList.innerHTML='';
-  if(!data||data.length===0) return;
+  const {data}=await sb.from('invitaciones').select('*,proyectos(nombre)').eq('email_invitado',currentUser.email).eq('aceptada',false);
+  const invList=document.getElementById('inv-list');invList.innerHTML='';
+  if(!data||data.length===0)return;
   data.forEach(inv=>{
-    const div=document.createElement('div');
-    div.className='inv-card';
+    const div=document.createElement('div');div.className='inv-card';
     div.innerHTML='<div class="inv-info"><div class="inv-name">📩 '+(inv.proyectos?.nombre||'Proyecto')+'</div><div class="inv-from">Te invitaron a unirte</div></div><button class="inv-btn" onclick="aceptarInvitacion(\''+inv.id+'\',\''+inv.proyecto_id+'\')">Unirse</button>';
     invList.appendChild(div);
   });
 }
-
-async function aceptarInvitacion(invId, proyId){
-  await sb.from('proyecto_miembros').insert({proyecto_id:proyId, user_id:currentUser.id, email:currentUser.email});
+async function aceptarInvitacion(invId,proyId){
+  await sb.from('proyecto_miembros').insert({proyecto_id:proyId,user_id:currentUser.id,email:currentUser.email});
   await sb.from('invitaciones').update({aceptada:true}).eq('id',invId);
-  await loadProyectos(); await loadInvitaciones();
+  await loadProyectos();await loadInvitaciones();
 }
-
 async function crearProyecto(){
   const nombre=document.getElementById('np-nombre').value.trim();
   if(!nombre){document.getElementById('np-error').textContent='Ingresa un nombre';return;}
-  const {data,error}=await sb.from('proyectos').insert({nombre, creado_por:currentUser.id}).select().single();
+  const {data,error}=await sb.from('proyectos').insert({nombre,creado_por:currentUser.id}).select().single();
   if(error){document.getElementById('np-error').textContent='Error al crear';return;}
-  await sb.from('proyecto_miembros').insert({proyecto_id:data.id, user_id:currentUser.id, email:currentUser.email});
-  hideModal('modal-nuevo-proyecto');
-  await loadProyectos();
+  await sb.from('proyecto_miembros').insert({proyecto_id:data.id,user_id:currentUser.id,email:currentUser.email});
+  hideModal('modal-nuevo-proyecto');await loadProyectos();
 }
-
 async function openProyecto(p){
-  currentProyecto = p;
-  document.getElementById('det-title').textContent = p.nombre;
-  const {data} = await sb.from('proyecto_miembros').select('email').eq('proyecto_id', p.id);
-  document.getElementById('det-members').textContent = (data||[]).map(m=>m.email.split('@')[0]).join(' · ');
-  switchDetTab('ahorro');
-  show('proyecto-detalle-screen');
-  await renderMetas();
-  await renderGastosConj();
+  currentProyecto=p;
+  document.getElementById('det-title').textContent=p.nombre;
+  const {data}=await sb.from('proyecto_miembros').select('email').eq('proyecto_id',p.id);
+  document.getElementById('det-members').textContent=(data||[]).map(m=>m.email.split('@')[0]).join(' · ');
+  initGastosFilter();switchDetTab('ahorro');show('proyecto-detalle-screen');
+  await renderMetas();await renderGastosConj();
 }
-
+function initGastosFilter(){
+  const now=new Date();
+  gastosMes_filter=now.getMonth()+1;gastosAnio_filter=now.getFullYear();
+  const selMes=document.getElementById('gastos-sel-mes');selMes.innerHTML='';
+  MONTHS.forEach((m,i)=>{const opt=document.createElement('option');opt.value=i+1;opt.textContent=m;if(i+1===gastosMes_filter)opt.selected=true;selMes.appendChild(opt);});
+  const selAnio=document.getElementById('gastos-sel-anio');selAnio.innerHTML='';
+  const y=now.getFullYear();
+  for(let yr=y-2;yr<=y+1;yr++){const opt=document.createElement('option');opt.value=yr;opt.textContent=yr;if(yr===gastosAnio_filter)opt.selected=true;selAnio.appendChild(opt);}
+}
 function switchDetTab(tab){
-  document.querySelectorAll('.det-tab').forEach((t,i)=>{
-    const tabs=['ahorro','gastos','config'];
-    t.classList.toggle('active', tabs[i]===tab);
-  });
+  document.querySelectorAll('.det-tab').forEach((t,i)=>{const tabs=['ahorro','gastos','invitar'];t.classList.toggle('active',tabs[i]===tab);});
   document.querySelectorAll('.det-section').forEach(s=>s.classList.remove('active'));
   document.getElementById('tab-'+tab).classList.add('active');
 }
 
+// METAS
 async function renderMetas(){
   const {data:metas}=await sb.from('metas_ahorro').select('*').eq('proyecto_id',currentProyecto.id);
   const list=document.getElementById('metas-list');
@@ -948,158 +912,170 @@ async function renderMetas(){
   const {data:aportes}=await sb.from('aportes_ahorro').select('*').eq('proyecto_id',currentProyecto.id);
   const {data:miembros}=await sb.from('proyecto_miembros').select('user_id,email').eq('proyecto_id',currentProyecto.id);
   list.innerHTML='';
-  metas.forEach(meta=>{
+  metas.forEach((meta,idx)=>{
     const metaAportes=(aportes||[]).filter(a=>a.meta_id===meta.id);
     const totalAportado=metaAportes.reduce((s,a)=>s+Number(a.monto),0);
     const pct=Math.min(totalAportado/meta.meta_total*100,100);
     const barClass=pct<80?'bar-ok':pct<100?'bar-warn':'bar-over';
     const falta=meta.meta_total-totalAportado;
     const porMiembro={};
-    (miembros||[]).forEach(m=>{ porMiembro[m.user_id]={email:m.email, total:0}; });
-    metaAportes.forEach(a=>{ if(porMiembro[a.user_id]) porMiembro[a.user_id].total+=Number(a.monto); });
+    (miembros||[]).forEach(m=>{porMiembro[m.user_id]={email:m.email,total:0};});
+    metaAportes.forEach(a=>{if(porMiembro[a.user_id])porMiembro[a.user_id].total+=Number(a.monto);});
     const membersHtml=Object.values(porMiembro).map(m=>'<div class="meta-member-row"><span class="meta-member-name">'+m.email.split('@')[0]+'</span><span class="meta-member-val">'+fmt(m.total)+'</span></div>').join('');
-    const card=document.createElement('div');
-    card.className='meta-card';
-    card.innerHTML='<div class="meta-top"><div><div class="meta-name">'+meta.nombre+'</div>'+(meta.aporte_mensual_sugerido?'<div class="meta-monthly">Sugerido: '+fmt(meta.aporte_mensual_sugerido)+'/mes</div>':'')+'</div><div class="meta-total-wrap"><div class="meta-total-label">Meta</div><div class="meta-total-val">'+fmt(meta.meta_total)+'</div></div></div><div class="meta-progress-nums"><span>'+fmt(totalAportado)+' aportado</span><span>'+(falta>0?fmt(falta)+' falta':'¡Meta alcanzada! 🎉')+'</span></div><div class="bar-track" style="margin-bottom:10px"><div class="bar-fill '+barClass+'" style="width:'+pct+'%"></div></div><div class="meta-members-contrib">'+membersHtml+'</div><button class="meta-aporte-btn" onclick="showModalAporte(\''+meta.id+'\')">+ Registrar aporte</button>';
+    const ddId='dd-meta-'+idx;
+    const card=document.createElement('div');card.className='meta-card';
+    card.innerHTML='<div class="meta-top"><div><div class="meta-name">'+meta.nombre+'</div>'+(meta.aporte_mensual_sugerido?'<div class="meta-monthly">Sugerido: '+fmt(meta.aporte_mensual_sugerido)+'/mes</div>':'')+'</div>'+
+      '<div style="display:flex;align-items:flex-start;gap:8px"><div class="meta-total-wrap"><div class="meta-total-label">Meta</div><div class="meta-total-val">'+fmt(meta.meta_total)+'</div></div>'+
+      '<span class="menu-wrap"><button class="menu-btn" onclick="toggleDropdown(\''+ddId+'\',event)">···</button>'+
+      '<div class="dropdown hidden" id="'+ddId+'">'+
+      '<button class="dropdown-item" onclick="showEditarMeta(\''+meta.id+'\','+meta.meta_total+','+(meta.aporte_mensual_sugerido||0)+')">✏️ Editar montos</button>'+
+      '<button class="dropdown-item danger" onclick="eliminarMeta(\''+meta.id+'\')">🗑️ Eliminar meta</button>'+
+      '</div></span></div></div>'+
+      '<div class="meta-progress-nums"><span>'+fmt(totalAportado)+' aportado</span><span>'+(falta>0?fmt(falta)+' falta':'¡Meta alcanzada! 🎉')+'</span></div>'+
+      '<div class="bar-track" style="margin-bottom:10px"><div class="bar-fill '+barClass+'" style="width:'+pct+'%"></div></div>'+
+      '<div class="meta-members-contrib">'+membersHtml+'</div>'+
+      '<button class="meta-aporte-btn" onclick="showModalAporte(\''+meta.id+'\')">+ Registrar aporte</button>';
     list.appendChild(card);
   });
 }
-
-function showModalAporte(metaId){
-  currentMetaId=metaId;
-  document.getElementById('ap-monto').value='';
-  document.getElementById('ap-desc').value='';
-  document.getElementById('ap-error').textContent='';
-  showModal('modal-aporte');
+function showEditarMeta(metaId,total,mensual){
+  editingMetaId=metaId;
+  document.getElementById('em-total').value=total;
+  document.getElementById('em-mensual').value=mensual;
+  document.getElementById('em-error').textContent='';
+  showModal('modal-editar-meta');
 }
-
+async function guardarEditarMeta(){
+  const total=parseInt(document.getElementById('em-total').value)||0;
+  const mensual=parseInt(document.getElementById('em-mensual').value)||0;
+  if(!total){document.getElementById('em-error').textContent='Ingresa un monto';return;}
+  await sb.from('metas_ahorro').update({meta_total:total,aporte_mensual_sugerido:mensual}).eq('id',editingMetaId);
+  hideModal('modal-editar-meta');await renderMetas();
+}
+async function eliminarMeta(metaId){
+  if(!confirm('¿Eliminar esta meta y todos sus aportes?'))return;
+  await sb.from('aportes_ahorro').delete().eq('meta_id',metaId);
+  await sb.from('metas_ahorro').delete().eq('id',metaId);
+  await renderMetas();
+}
+function showModalAporte(metaId){
+  currentMetaId=metaId;document.getElementById('ap-monto').value='';document.getElementById('ap-desc').value='';document.getElementById('ap-error').textContent='';showModal('modal-aporte');
+}
 async function registrarAporte(){
   const monto=parseInt(document.getElementById('ap-monto').value)||0;
   const desc=document.getElementById('ap-desc').value||'';
   if(!monto){document.getElementById('ap-error').textContent='Ingresa un monto';return;}
   const now=new Date();
-  const {error}=await sb.from('aportes_ahorro').insert({
-    meta_id:currentMetaId, proyecto_id:currentProyecto.id,
-    user_id:currentUser.id, monto, mes:now.getMonth()+1, anio:now.getFullYear(), descripcion:desc
-  });
+  const {error}=await sb.from('aportes_ahorro').insert({meta_id:currentMetaId,proyecto_id:currentProyecto.id,user_id:currentUser.id,monto,mes:now.getMonth()+1,anio:now.getFullYear(),descripcion:desc});
   if(error){document.getElementById('ap-error').textContent='Error al guardar';return;}
-  hideModal('modal-aporte');
-  await renderMetas();
+  hideModal('modal-aporte');await renderMetas();
 }
-
-async function renderGastosConj(){
-  const {data:cats}=await sb.from('categorias_gasto_conjunto').select('*').eq('proyecto_id',currentProyecto.id);
-  const list=document.getElementById('gastos-conj-list');
-  if(!cats||cats.length===0){list.innerHTML='<div style="color:var(--muted);font-size:13px;padding:20px 0">No hay categorías aún.</div>';return;}
-  const now=new Date();
-  const mes=now.getMonth()+1; const anio=now.getFullYear();
-  const start=anio+'-'+String(mes).padStart(2,'0')+'-01';
-  const endDay=new Date(anio,mes,0).getDate();
-  const end=anio+'-'+String(mes).padStart(2,'0')+'-'+endDay;
-  const {data:gastos}=await sb.from('gastos_conjuntos').select('*')
-    .eq('proyecto_id',currentProyecto.id).gte('fecha',start).lte('fecha',end);
-  const {data:miembros}=await sb.from('proyecto_miembros').select('user_id,email').eq('proyecto_id',currentProyecto.id);
-  list.innerHTML='';
-  cats.forEach(cat=>{
-    const catGastos=(gastos||[]).filter(g=>g.categoria_id===cat.id);
-    const total=catGastos.reduce((s,g)=>s+Number(g.monto),0);
-    const presup=cat.presupuesto_total||0;
-    const porMiembro={};
-    (miembros||[]).forEach(m=>{ porMiembro[m.user_id]={email:m.email,total:0}; });
-    catGastos.forEach(g=>{ if(porMiembro[g.user_id]) porMiembro[g.user_id].total+=Number(g.monto); });
-    const membersHtml=Object.values(porMiembro).map(m=>'<div class="gasto-conj-member-row"><span class="gasto-conj-member-name">'+m.email.split('@')[0]+'</span><span class="gasto-conj-member-val">'+fmt(m.total)+'</span></div>').join('');
-    let barHtml='';
-    if(presup>0){
-      const pct=Math.min(total/presup*100,100);
-      const barClass=pct<80?'bar-ok':pct<100?'bar-warn':'bar-over';
-      const restante=presup-total;
-      barHtml='<div class="bar-track" style="margin-bottom:8px"><div class="bar-fill '+barClass+'" style="width:'+pct+'%"></div></div><div style="font-size:11px;font-family:var(--mono);margin-bottom:10px">'+(restante>=0?'<span style="color:var(--accent)">Restante: '+fmt(restante)+'</span>':'<span style="color:var(--danger)">Exceso: '+fmt(Math.abs(restante))+'</span>')+'</div>';
-    }
-    const card=document.createElement('div');
-    card.className='gasto-conj-card';
-    card.innerHTML='<div class="gasto-conj-top"><span class="gasto-conj-name">'+cat.nombre+'</span><span class="gasto-conj-presup">'+(presup?fmt(presup)+' presup.':fmt(total)+' total')+'</span></div>'+barHtml+'<div class="gasto-conj-members">'+membersHtml+'</div><button class="gasto-conj-reg-btn" onclick="showModalGastoConj(\''+cat.id+'\')">+ Registrar gasto</button>';
-    list.appendChild(card);
-  });
-}
-
-async function crearCategGasto(){
-  const nombre=document.getElementById('ncg-nombre').value.trim();
-  const presup=parseInt(document.getElementById('ncg-presup').value)||0;
-  if(!nombre){document.getElementById('ncg-error').textContent='Ingresa un nombre';return;}
-  const {error}=await sb.from('categorias_gasto_conjunto').insert({proyecto_id:currentProyecto.id, nombre, presupuesto_total:presup});
-  if(error){document.getElementById('ncg-error').textContent='Error al crear';return;}
-  hideModal('modal-nueva-cat-gasto');
-  await renderGastosConj();
-}
-
-function showModalGastoConj(categId){
-  currentCategGastoId=categId;
-  document.getElementById('gc-monto').value='';
-  document.getElementById('gc-fecha').value=new Date().toISOString().split('T')[0];
-  document.getElementById('gc-desc').value='';
-  document.getElementById('gc-error').textContent='';
-  showModal('modal-gasto-conj');
-}
-
-async function registrarGastoConj(){
-  const monto=parseInt(document.getElementById('gc-monto').value)||0;
-  const fecha=document.getElementById('gc-fecha').value;
-  const desc=document.getElementById('gc-desc').value||'';
-  if(!monto||!fecha){document.getElementById('gc-error').textContent='Ingresa monto y fecha';return;}
-  const {error}=await sb.from('gastos_conjuntos').insert({
-    categoria_id:currentCategGastoId, proyecto_id:currentProyecto.id,
-    user_id:currentUser.id, monto, fecha, descripcion:desc
-  });
-  if(error){document.getElementById('gc-error').textContent='Error al guardar';return;}
-  hideModal('modal-gasto-conj');
-  await renderGastosConj();
-}
-
-async function invitarMiembro(){
-  const email=document.getElementById('inv-email-input').value.trim();
-  const errEl=document.getElementById('inv-error');
-  errEl.textContent=''; errEl.style.color='var(--danger)';
-  if(!email){errEl.textContent='Ingresa un correo';return;}
-  if(email===currentUser.email){errEl.textContent='No puedes invitarte a ti mismo';return;}
-  const {error}=await sb.from('invitaciones').insert({
-    proyecto_id:currentProyecto.id, email_invitado:email, invitado_por:currentUser.id
-  });
-  if(error){errEl.textContent='Error al enviar invitación';return;}
-  document.getElementById('inv-email-input').value='';
-  errEl.style.color='var(--accent)';
-  errEl.textContent='Invitación enviada. El usuario la verá al entrar a la app.';
-}
-
 async function crearMeta(){
   const nombre=document.getElementById('nm-nombre').value.trim();
   const total=parseInt(document.getElementById('nm-total').value)||0;
   const mensual=parseInt(document.getElementById('nm-mensual').value)||0;
   if(!nombre||!total){document.getElementById('nm-error').textContent='Nombre y meta total son requeridos';return;}
-  const {error}=await sb.from('metas_ahorro').insert({proyecto_id:currentProyecto.id, nombre, meta_total:total, aporte_mensual_sugerido:mensual});
+  const {error}=await sb.from('metas_ahorro').insert({proyecto_id:currentProyecto.id,nombre,meta_total:total,aporte_mensual_sugerido:mensual});
   if(error){document.getElementById('nm-error').textContent='Error al crear';return;}
-  hideModal('modal-nueva-meta');
-  await renderMetas();
+  hideModal('modal-nueva-meta');await renderMetas();
 }
 
-async function init(){
-  const {data:{session}} = await sb.auth.getSession();
-  if(session){
-    currentUser=session.user;
-    perfil=await loadPerfil();
-    if(!perfil){ renderObCats(); document.getElementById('loading').style.display='none'; show('onboarding-screen'); }
-    else { initHome(); document.getElementById('loading').style.display='none'; show('home'); await fetchGastos(); renderHome(); }
-  } else {
-    document.getElementById('loading').style.display='none';
-    show('auth-screen');
-  }
-  sb.auth.onAuthStateChange(async (event,session)=>{
-    if(event==='SIGNED_IN'&&session){
-      currentUser=session.user; perfil=await loadPerfil();
-      if(!perfil){ renderObCats(); show('onboarding-screen'); }
-      else { initHome(); show('home'); await fetchGastos(); renderHome(); }
-    } else if(event==='SIGNED_OUT'){
-      currentUser=null; perfil=null; gastosMes={}; show('auth-screen');
+// GASTOS CONJUNTOS
+async function renderGastosConj(){
+  gastosMes_filter=parseInt(document.getElementById('gastos-sel-mes').value)||gastosMes_filter;
+  gastosAnio_filter=parseInt(document.getElementById('gastos-sel-anio').value)||gastosAnio_filter;
+  const {data:cats}=await sb.from('categorias_gasto_conjunto').select('*').eq('proyecto_id',currentProyecto.id);
+  const list=document.getElementById('gastos-conj-list');
+  if(!cats||cats.length===0){list.innerHTML='<div style="color:var(--muted);font-size:13px;padding:20px 0">No hay categorías aún.</div>';return;}
+  const start=gastosAnio_filter+'-'+String(gastosMes_filter).padStart(2,'0')+'-01';
+  const endDay=new Date(gastosAnio_filter,gastosMes_filter,0).getDate();
+  const end=gastosAnio_filter+'-'+String(gastosMes_filter).padStart(2,'0')+'-'+endDay;
+  const {data:gastos}=await sb.from('gastos_conjuntos').select('*').eq('proyecto_id',currentProyecto.id).gte('fecha',start).lte('fecha',end);
+  const {data:miembros}=await sb.from('proyecto_miembros').select('user_id,email').eq('proyecto_id',currentProyecto.id);
+  list.innerHTML='';
+  cats.forEach((cat,idx)=>{
+    const catGastos=(gastos||[]).filter(g=>g.categoria_id===cat.id);
+    const total=catGastos.reduce((s,g)=>s+Number(g.monto),0);
+    const presup=cat.presupuesto_total||0;
+    const porMiembro={};
+    (miembros||[]).forEach(m=>{porMiembro[m.user_id]={email:m.email,total:0};});
+    catGastos.forEach(g=>{if(porMiembro[g.user_id])porMiembro[g.user_id].total+=Number(g.monto);});
+    const membersHtml=Object.values(porMiembro).map(m=>'<div class="gasto-conj-member-row"><span class="gasto-conj-member-name">'+m.email.split('@')[0]+'</span><span class="gasto-conj-member-val">'+fmt(m.total)+'</span></div>').join('');
+    let barHtml='';
+    if(presup>0){
+      const pct=Math.min(total/presup*100,100);const barClass=pct<80?'bar-ok':pct<100?'bar-warn':'bar-over';const restante=presup-total;
+      barHtml='<div class="bar-track" style="margin-bottom:8px"><div class="bar-fill '+barClass+'" style="width:'+pct+'%"></div></div><div style="font-size:11px;font-family:var(--mono);margin-bottom:10px">'+(restante>=0?'<span style="color:var(--accent)">Restante: '+fmt(restante)+'</span>':'<span style="color:var(--danger)">Exceso: '+fmt(Math.abs(restante))+'</span>')+'</div>';
     }
+    const ddId='dd-gcat-'+idx;
+    const card=document.createElement('div');card.className='gasto-conj-card';
+    card.innerHTML='<div class="gasto-conj-top">'+
+      '<span class="gasto-conj-name">'+cat.nombre+'</span>'+
+      '<div style="display:flex;align-items:center;gap:8px"><span class="gasto-conj-presup">'+(presup?fmt(presup)+' presup.':fmt(total)+' total')+'</span>'+
+      '<span class="menu-wrap"><button class="menu-btn" onclick="toggleDropdown(\''+ddId+'\',event)">···</button>'+
+      '<div class="dropdown hidden" id="'+ddId+'">'+
+      '<button class="dropdown-item danger" onclick="eliminarCategGasto(\''+cat.id+'\')">🗑️ Eliminar categoría</button>'+
+      '</div></span></div></div>'+
+      barHtml+
+      '<div class="gasto-conj-members">'+membersHtml+'</div>'+
+      '<button class="gasto-conj-reg-btn" onclick="showModalGastoConj(\''+cat.id+'\')">+ Registrar gasto</button>';
+    list.appendChild(card);
+  });
+}
+async function eliminarCategGasto(categId){
+  if(!confirm('¿Eliminar esta categoría y sus gastos?'))return;
+  await sb.from('gastos_conjuntos').delete().eq('categoria_id',categId);
+  await sb.from('categorias_gasto_conjunto').delete().eq('id',categId);
+  await renderGastosConj();
+}
+async function crearCategGasto(){
+  const nombre=document.getElementById('ncg-nombre').value.trim();
+  const presup=parseInt(document.getElementById('ncg-presup').value)||0;
+  if(!nombre){document.getElementById('ncg-error').textContent='Ingresa un nombre';return;}
+  const {error}=await sb.from('categorias_gasto_conjunto').insert({proyecto_id:currentProyecto.id,nombre,presupuesto_total:presup});
+  if(error){document.getElementById('ncg-error').textContent='Error al crear';return;}
+  hideModal('modal-nueva-cat-gasto');await renderGastosConj();
+}
+function showModalGastoConj(categId){
+  currentCategGastoId=categId;document.getElementById('gc-monto').value='';
+  document.getElementById('gc-fecha').value=new Date().toISOString().split('T')[0];
+  document.getElementById('gc-desc').value='';document.getElementById('gc-error').textContent='';showModal('modal-gasto-conj');
+}
+async function registrarGastoConj(){
+  const monto=parseInt(document.getElementById('gc-monto').value)||0;
+  const fecha=document.getElementById('gc-fecha').value;
+  const desc=document.getElementById('gc-desc').value||'';
+  if(!monto||!fecha){document.getElementById('gc-error').textContent='Ingresa monto y fecha';return;}
+  const {error}=await sb.from('gastos_conjuntos').insert({categoria_id:currentCategGastoId,proyecto_id:currentProyecto.id,user_id:currentUser.id,monto,fecha,descripcion:desc});
+  if(error){document.getElementById('gc-error').textContent='Error al guardar';return;}
+  hideModal('modal-gasto-conj');await renderGastosConj();
+}
+
+// INVITACIONES
+async function invitarMiembro(){
+  const email=document.getElementById('inv-email-input').value.trim();
+  const errEl=document.getElementById('inv-error');errEl.textContent='';errEl.style.color='var(--danger)';
+  if(!email){errEl.textContent='Ingresa un correo';return;}
+  if(email===currentUser.email){errEl.textContent='No puedes invitarte a ti mismo';return;}
+  const {error}=await sb.from('invitaciones').insert({proyecto_id:currentProyecto.id,email_invitado:email,invitado_por:currentUser.id});
+  if(error){errEl.textContent='Error al enviar';return;}
+  document.getElementById('inv-email-input').value='';
+  errEl.style.color='var(--accent)';errEl.textContent='✓ Invitación enviada';
+}
+
+// INIT
+async function init(){
+  const {data:{session}}=await sb.auth.getSession();
+  if(session){
+    currentUser=session.user;perfil=await loadPerfil();
+    if(!perfil){renderObCats();document.getElementById('loading').style.display='none';show('onboarding-screen');}
+    else{initHome();document.getElementById('loading').style.display='none';show('home');await fetchGastos();renderHome();}
+  }else{document.getElementById('loading').style.display='none';show('auth-screen');}
+  sb.auth.onAuthStateChange(async(event,session)=>{
+    if(event==='SIGNED_IN'&&session){
+      currentUser=session.user;perfil=await loadPerfil();
+      if(!perfil){renderObCats();show('onboarding-screen');}
+      else{initHome();show('home');await fetchGastos();renderHome();}
+    }else if(event==='SIGNED_OUT'){currentUser=null;perfil=null;gastosMes={};show('auth-screen');}
   });
 }
 init();
